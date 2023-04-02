@@ -12,13 +12,13 @@ from folium.plugins import MarkerCluster
 st.set_page_config(layout= 'wide')
 
 
-@st.cache_data
+@st.cache(allow_output_mutation=True)
 def get_data( path ):
     data = pd.read_csv(path)
 
     return data
 
-@st.cache_data
+@st.cache(allow_output_mutation=True)
 def get_geofile(url):
     geofile = geopandas.read_file(url)
 
